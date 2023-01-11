@@ -11,11 +11,13 @@ int house(int x[], int num)
         int addr = x[i];
 
         // compute dist travelled by everyone to addr
+        // EXERCISE: Write a function dist for this block of code.
         int dist = 0;
         for (int j = 0; j < num; ++j)
         {
             dist += abs(x[j] - addr);
         }
+        
         if (min_dist == -1)
         {
             min_dist = dist;
