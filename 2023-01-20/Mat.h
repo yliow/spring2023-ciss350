@@ -5,6 +5,7 @@
 
 #include <iostream>
 
+//template < typename T >
 class Mat
 {
   public:
@@ -60,6 +61,7 @@ class Mat
     double * p_;
 };
 
+//template < typename T >
 inline
 std::ostream & operator<<(std::ostream & cout, const Mat & m)
 {
