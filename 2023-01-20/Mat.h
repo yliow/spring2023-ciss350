@@ -15,6 +15,30 @@ class Mat
     {
         delete [] p_;
     }
+    Mat(const Mat & m)
+        : nrows_(m.nrows_), ncols_(m.ncols_), p_(new double[m.nrows_ * m.ncols_])
+    {
+        for (int i = 0; i < m.nrows_ * m.ncols_; ++i)
+        {
+            p_[i] = m.p_[i];
+        }
+    }
+    const Mat & operator=(const Mat & m)
+    {
+        if (this != &m)
+        {
+            delete [] p_;
+            nrows_ = m.nrows_;
+            ncols_ = m.ncols_;
+            p_ = new double[m.nrows_ * m.ncols_];
+            for (int i = 0; i < m.nrows_ * m.ncols_; ++i)
+            {
+                p_[i] = m.p_[i];
+            }
+        }
+        return *this;
+    }
+    
     //private:
     int nrows_, ncols_;
     double * p_;
