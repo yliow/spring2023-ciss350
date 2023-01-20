@@ -38,6 +38,14 @@ class Mat
         }
         return *this;
     }
+    double operator()(int r, int c) const
+    {
+        return p_[r * ncols_ + c];
+    }
+    double & operator()(int r, int c)
+    {
+        return p_[r * ncols_ + c];
+    }
     
     //private:
     int nrows_, ncols_;
