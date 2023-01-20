@@ -4,7 +4,7 @@
 # Macros
 #------------------------------------------------------------------------------
 CXX       = g++
-CXXFLAGS  = -g -Wall -fmax-errors=3
+CXXFLAGS  = -g -Wall -Wextra -fmax-errors=3 -std=c++17
 LINK      = g++
 LINKFLAGS = 
 OBJS      = main.o

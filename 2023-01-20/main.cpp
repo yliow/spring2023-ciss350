@@ -1,3 +1,7 @@
+// Make template
+// Add operators +, *
+
+
 #include <iostream>
 #include "Mat.h" // Eigen2 -> used inside Google AI machine learning library Tensorflow
 
