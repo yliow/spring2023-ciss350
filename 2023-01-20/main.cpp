@@ -7,7 +7,7 @@ void f()
     // m.p_[2] = -1;
     m(0, 2) = -1;
     // m.p_[4] = 42;
-    //m(1, 1) = 42; // m.operator()(1, 2)
+    m(1, 1) = 42; // m.operator()(1, 2)
     std::cout << m << '\n';
     
     Mat n(m);
