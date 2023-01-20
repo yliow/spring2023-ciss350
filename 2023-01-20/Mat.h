@@ -38,6 +38,14 @@ class Mat
         }
         return *this;
     }
+    int nrows() const
+    {
+        return nrows_;
+    }
+    int ncols() const
+    {
+        return ncol_;
+    }
     double operator()(int r, int c) const
     {
         return p_[r * ncols_ + c];
@@ -61,12 +69,12 @@ std::ostream & operator<<(std::ostream & cout, const Mat & m)
     // }
     // cout << '\n';
 
-    for (int r = 0; r < m.nrows_; ++r)
+    for (int r = 0; r < m.nrows(); ++r)
     {
         cout << '[';
-        for (int c = 0; c < m.ncols_; ++c)
+        for (int c = 0; c < m.ncols(); ++c)
         {
-            cout << m.p_[r * m.ncols_ + c] << ' ';
+            cout << m(r, c) << ' ';
         }
         cout << ']' << '\n';
     }
