@@ -44,7 +44,7 @@ class Mat
     }
     int ncols() const
     {
-        return ncol_;
+        return ncols_;
     }
     double operator()(int r, int c) const
     {
