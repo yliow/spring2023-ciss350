@@ -1,5 +1,29 @@
 // Make template
-// Add operators +, *
+// Add operators +, *, etc so that you can do this:
+//
+// Mat< double > m(2, 3);
+// m(0, 2) = -1;
+// Mat< double > n(2, 3);
+// n(0, 2) = 42;
+// std::cout << m * 1.2 << '\n'; 
+// std::cout << 1.2 * m << '\n'; 
+// std::cout << m + n << '\n'; 
+// std::cout << m - n << '\n'; 
+// std::cout << m * 1.2 << '\n'; 
+//
+// Matrix mult:
+// Mat< double > p(3, 4);
+// std::cout << m * p << '\n';
+//
+// Matrix determinant, inverse
+// Mat< double > q(2, 2);
+// q(0,0) = 1;
+// q(0,1) = 2;
+// q(1,0) = 3;
+// q(1,1) = 4;
+// std::cout << det(q) << '\n';
+// std::cout << q.inverse() << '\n';
+// std::cout << q * q.inverse() << '\n'; // approx [[1,0],[0,1]]
 
 
 #include <iostream>
