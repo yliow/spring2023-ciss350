@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 // file: SLNode.h
 class SLNode
@@ -18,6 +19,9 @@ std::ostream & operator<<(std::ostream & cout, const SLNode & n)
          << " key:" << n.key_
          << ", next:" << n.next_
          << ">";
+
+    //cout << n.key_;
+         
     return cout;
 }
 
@@ -34,13 +38,13 @@ public:
     // - operator=
     void insert_head(int key)
     {
-        SLNode * p = new SLNode(key);
-        p->next_ = phead_;
-        phead_ = p;
+        phead_ = new SLNode(key, phead_);
     }
     void delete_head(int key)
     {
-        // TODO
+        SLNode * p = phead_;
+        phead_ = phead_->next_;
+        delete p;
     }
 //private:
     SLNode * phead_;
@@ -52,11 +56,15 @@ std::ostream & operator<<(std::ostream & cout, const SLList & list)
     cout << "<SLList " << &list << '\n';
 
     SLNode * p = list.phead_;
+    //cout << '[';
+    // std::string delim = "";
     while (p != NULL)
     {
-        std::cout << (*p) << '\n';
+        std::cout << "    " << (*p) << '\n';
+        // std::cout << delim << (*p); delim = ", ";
         p = p->next_;
     }
+    // cout << ']';
 
     cout << ">";
     return cout;
@@ -81,6 +89,13 @@ int main()
     SLList list;
     std::cout << list << '\n';
     list.insert_head(1);
+    std::cout << list << '\n';
+    list.insert_head(0);
+    std::cout << list << '\n';
+    list.insert_head(3);
+    std::cout << list << '\n';
+    list.insert_head(5);
+    std::cout << list << '\n';
     
     delete n5;
     delete n3;
