@@ -40,7 +40,7 @@ public:
     {
         phead_ = new SLNode(key, phead_);
     }
-    void delete_head(int key)
+    void delete_head()
     {
         SLNode * p = phead_;
         phead_ = phead_->next_;
@@ -95,6 +95,9 @@ int main()
     list.insert_head(3);
     std::cout << list << '\n';
     list.insert_head(5);
+    std::cout << list << '\n';
+
+    list.delete_head();
     std::cout << list << '\n';
     
     delete n5;
