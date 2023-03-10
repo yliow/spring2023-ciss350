@@ -47,7 +47,7 @@ int height(Node * proot)
     }
     else
     {
-        std::cout << "height recursive ... left ...\n";
+        std::cout << "height recursive ... left ... \n";
         int leftht = height(proot->left_);
         std::cout << "height recursive ... right ...\n";
         int rightht = height(proot->right_);
