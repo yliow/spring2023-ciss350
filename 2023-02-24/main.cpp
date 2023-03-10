@@ -42,9 +42,12 @@ public:
     }
     void delete_head()
     {
-        SLNode * p = phead_;
-        phead_ = phead_->next_;
-        delete p;
+        if (phead_ != NULL)
+        {
+            SLNode * p = phead_;
+            phead_ = phead_->next_;
+            delete p;
+        }
     }
 //private:
     SLNode * phead_;
@@ -97,6 +100,24 @@ int main()
     list.insert_head(5);
     std::cout << list << '\n';
 
+    list.delete_head();
+    std::cout << list << '\n';
+    list.delete_head();
+    std::cout << list << '\n';
+    list.delete_head();
+    std::cout << list << '\n';
+    list.delete_head();
+    std::cout << list << '\n';
+    list.delete_head();
+    std::cout << list << '\n';
+    list.delete_head();
+    std::cout << list << '\n';
+    list.delete_head();
+    std::cout << list << '\n';
+    list.delete_head();
+    std::cout << list << '\n';
+    list.delete_head();
+    std::cout << list << '\n';
     list.delete_head();
     std::cout << list << '\n';
     
