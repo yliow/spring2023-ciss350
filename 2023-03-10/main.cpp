@@ -58,8 +58,7 @@ int height(Node * proot)
 }
 
 int main()
-{
-    
+{   
     Node * p10 = new Node(10);
     Node * p5 = new Node(5);
     Node * p8 = new Node(8);
