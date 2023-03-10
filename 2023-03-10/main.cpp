@@ -53,7 +53,7 @@ int height(Node * proot)
         int rightht = height(proot->right_);
         int ht = 1 + max(leftht, rightht);
         std::cout << "height recursive ... return " << ht << '\n';
-        return 1 + max(leftht, rightht); 
+        return ht; 
     }
 }
 
