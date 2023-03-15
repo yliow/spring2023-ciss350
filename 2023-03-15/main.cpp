@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stack>
 
 /*
             10
@@ -121,6 +122,26 @@ void postorder_print(Node * proot)
     }
 }
 
+void preorder_iteration_print(Node * proot)
+{
+    std::stack< Node * > stk;
+    stk.push(proot);
+    while (!stk.empty())
+    {
+        Node * p = stk.top();
+        stk.pop();
+        if (p == NULL)
+        {
+            std::cout << "* ";
+        }
+        else
+        {
+            std::cout << p->key_ << ' ';
+            stk.push(p->right_);
+            stk.push(p->left_);
+        }
+    }
+}
 
 int main()
 {   
@@ -166,5 +187,8 @@ int main()
     postorder_print(p10);
     std::cout << '\n';
 
+    std::cout << "preorder print (by iteration) at 10\n";
+    preorder_iteration_print(p10);
+    
     return 0;
 }
