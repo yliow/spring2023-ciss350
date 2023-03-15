@@ -106,6 +106,22 @@ void inorder_print(Node * proot)
     }
 }
 
+void postorder_print(Node * proot)
+{
+    if (proot == NULL)
+    {
+        std::cout << "* ";
+        return;
+    }
+    else
+    {
+        postorder_print(proot->left_);
+        postorder_print(proot->right_);
+        std::cout << proot->key_ << ' ';
+    }
+}
+
+
 int main()
 {   
     Node * p10 = new Node(10);
@@ -144,6 +160,10 @@ int main()
 
     std::cout << "inorder print at 10\n";
     inorder_print(p10);
+    std::cout << '\n';
+
+    std::cout << "postorder print at 10\n";
+    postorder_print(p10);
     std::cout << '\n';
 
     return 0;
