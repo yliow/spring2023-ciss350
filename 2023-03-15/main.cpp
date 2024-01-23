@@ -189,6 +189,7 @@ int main()
 
     std::cout << "preorder print (by iteration) at 10\n";
     preorder_iteration_print(p10);
+    std::cout << '\n';
     
     return 0;
 }
